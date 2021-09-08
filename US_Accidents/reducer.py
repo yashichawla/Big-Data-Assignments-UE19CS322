@@ -3,7 +3,7 @@ import sys
 hourCount = dict()
 
 for line in sys.stdin:
-    hour, count = line.split("\t")
+    hour, count = line.split(",")
     hour = hour.strip()
     count = count.strip()
 
@@ -17,4 +17,4 @@ for line in sys.stdin:
     hourCount[hour]+= count
 
 for hour, count in hourCount.items():
-    print("{}\t{}".format(hour, count))
+    print("{} {}".format(hour, count))
