@@ -33,5 +33,5 @@ for line in sys.stdin:
         start_hour=data["Start_Time"]
         if start_hour.endswith(".000000000"):
             start_hour=start_hour[:-10]
-        start_hour = datetime.strptime(data["Start_Time"], "%Y-%m-%d %H:%M:%S")
+        start_hour = datetime.strptime(start_hour, "%Y-%m-%d %H:%M:%S")
         print("{:d},1".format(start_hour.hour))
