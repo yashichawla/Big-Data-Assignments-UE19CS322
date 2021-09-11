@@ -27,7 +27,6 @@ Teaticket 1
 Truro 2
 Wareham 3
 West Barnstable 1
-West Wareham 1
 MA 67
 ME
 Ellsworth 3
