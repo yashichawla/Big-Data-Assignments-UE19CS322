@@ -22,5 +22,5 @@ for line in sys.stdin:
             x=requests.post('http://20.185.44.219:5000/',json=coordinates)
             #state city 1
             new=x.json()
-            print("{},{},{:d}".format(new["state"],new["city"],1))
+            print("{},{},{}".format(new["state"],new["city"],1))
         
