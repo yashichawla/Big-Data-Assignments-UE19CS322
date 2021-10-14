@@ -47,7 +47,7 @@ for line in lines:
 #print 0 by default - in case no node has incoming nodes to it
 for line in sys.stdin:
     line=line.strip()
-    source,adj_list=line.split("\t")
+    source,adj_list=line.split("-")
 
     source=source.strip()
     adj_list=eval(adj_list.strip())

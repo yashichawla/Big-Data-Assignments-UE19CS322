@@ -9,13 +9,13 @@ conv = 0.5 # this value will vary for different test cases in the backend
 epoch = sys.argv[1]
 
 def rewrite_pagerank():
-    os.remove("v")
-    source = "v1"
-    destination = "v"
+    os.remove("/home/pes1ug19cs592/A2/v.txt")
+    source = "/home/pes1ug19cs592/A2/v1.txt"
+    destination = "/home/pes1ug19cs592/A2/v.txt"
     dest = shutil.copyfile(source, destination)
 
 
-with open("v") as file1, open("v1") as file2, open("log", "a") as logging:
+with open("/home/pes1ug19cs592/A2/v.txt") as file1, open("/home/pes1ug19cs592/A2/v1.txt") as file2, open("/home/pes1ug19cs592/A2/log", "a") as logging:
     for line1, line2 in zip(file1, file2):
         count += 1
         old_pagerank = float(line1.split(",")[1])

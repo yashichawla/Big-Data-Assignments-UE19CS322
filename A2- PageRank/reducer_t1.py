@@ -25,12 +25,12 @@ for line in sys.stdin:
         adj_list.append(dest)
 
     else: 
-        print(prev_source,adj_list) #write to adj_list file in hdfs, prev_source,1 to v file
-        v.write(f"{prev_source}, 1\n")
+        print(f"{prev_source}-{adj_list}") #write to adj_list file in hdfs, prev_source,1 to v file
+        v.write(f"{prev_source},1\n")
         prev_source=source
         adj_list=list()
         adj_list.append(dest)
 
-print(source,adj_list)
-v.write(f"{prev_source}, 1\n")
+print(f"{source}-{adj_list}")
+v.write(f"{prev_source},1\n")
 #LAST SOURCE write to adj_list file in hdfs, prev_source,1 to v file

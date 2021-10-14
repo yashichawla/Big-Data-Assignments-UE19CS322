@@ -25,10 +25,10 @@ for line in sys.stdin:
         sum+=contribution
 
     else: 
-        print(prev_page,round((0.15+0.85*sum),2))
+        print(f"{prev_page},{round((0.15+0.85*sum),2)}")
         # v1.write(prev_page,0.15+0.85*sum) 
         prev_page=page
         sum=0
 
-print(page,round(0.15+0.85*sum,2))
+print(f"{page},{round(0.15+0.85*sum,2)}")
 # v1.write(page,0.15+0.85*sum)
