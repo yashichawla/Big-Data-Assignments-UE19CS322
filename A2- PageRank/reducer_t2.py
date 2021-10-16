@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-
-# page contribution
 import sys
 prev_page=0
 sum=0
 page=0
-# dir=sys.argv[1].strip()
-# v1= open(dir, "w")
-
 for line in sys.stdin:
     line=line.strip()
     try:
@@ -25,10 +20,8 @@ for line in sys.stdin:
         sum+=contribution
 
     else: 
-        print(f"{prev_page},{round((0.15+0.85*sum),2)}")
-        # v1.write(prev_page,0.15+0.85*sum) 
+        print("{},{:.2f}".format(prev_page,0.15+0.85*sum)
         prev_page=page
         sum=contribution
 
-print(f"{page},{round(0.15+0.85*sum,2)}")
-# v1.write(page,0.15+0.85*sum)
+print("{},{:.2f}".format(page,0.15+0.85*sum)
