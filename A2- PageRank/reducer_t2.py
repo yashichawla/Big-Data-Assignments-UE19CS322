@@ -28,7 +28,7 @@ for line in sys.stdin:
         print(f"{prev_page},{round((0.15+0.85*sum),2)}")
         # v1.write(prev_page,0.15+0.85*sum) 
         prev_page=page
-        sum=0
+        sum=contribution
 
 print(f"{page},{round(0.15+0.85*sum,2)}")
 # v1.write(page,0.15+0.85*sum)
