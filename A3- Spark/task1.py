@@ -3,11 +3,13 @@ from pyspark import SparkContext
 from pyspark.sql import SQLContext
 from pyspark.sql.functions import count
 from pyspark.sql.functions import avg
+from pyspark.sql.types import FloatType
 spark_context = SparkContext.getOrCreate()
 sql_context = SQLContext(spark_context)
 country = sys.argv[1]
 df_path = sys.argv[2]
 df = sql_context.read.csv(df_path, header=True)
+df.AverageTemperature = df.AverageTemperature.cast(FloatType())
 df_country = df.filter(df.Country == country)
 df_group_city = df_country.groupBy(df.City).agg(
     avg(df.AverageTemperature).alias("Avg_temp"))

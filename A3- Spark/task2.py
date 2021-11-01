@@ -3,6 +3,7 @@ from pyspark import SparkContext
 from pyspark.sql import SQLContext
 from pyspark.sql.functions import count
 from pyspark.sql.functions import max
+from pyspark.sql.types import FloatType
 spark_context = SparkContext.getOrCreate()
 sql_context = SQLContext(spark_context)
 
@@ -11,6 +12,10 @@ path_global = sys.argv[2]
 
 df_city = sql_context.read.csv(path_city, header=True)
 df_global = sql_context.read.csv(path_global, header=True)
+
+df_city.AverageTemperature = df_city.AverageTemperature.cast(FloatType())
+df_global.LandAverageTemperature = df_global.LandAverageTemperature.cast(
+    FloatType())
 
 df_country_max = df_city.groupBy(df_city.dt, df_city.Country).agg(
     max(df_city.AverageTemperature).alias("MaxTemp"))
